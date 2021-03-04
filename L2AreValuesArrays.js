@@ -1,4 +1,6 @@
-
+const areValuesArrays = (v) => {
+    
+}
 
 
 
