@@ -1,6 +1,31 @@
 const isHomogenous = (arr) => {
-    
+    let output = 'true';
+    // this stays being true unless something doesn't match.
+    for (let value of arr) {
+        let type; 
+        // this can't be assigned a value yet as typeof()
+        // shows arrays as 'object', due to this there is
+        // and if statment needed after assigning 'type'.
+        if (Array.isArray(value)) {
+            type = 'array';
+            // checking if "value" is an array, if so "type"
+            // will be assigned value of 'array', if not
+            // "type" will be assigned value of 'typeof(value)'.
+        } else {type = typeof(value)};
+        if (Array.isArray(arr[0]) && type !== 'array') {
+            return 'false';
+            // checks if arr[0] is an array but "type" isn't.
+        } else if (Array.isArray(arr[0]) && type === 'array') {
+            // then do nothing, this way line 21
+            // "else if" won't kick in.
+        } else if (typeof(arr[0]) !== type) {
+            return 'false';
+        }
+    }
+    return output;
 }
+
+console.log(isHomogenous([[4], [4, {hello: 'hello'}]]))
 
 // Is Homogenous?
 
