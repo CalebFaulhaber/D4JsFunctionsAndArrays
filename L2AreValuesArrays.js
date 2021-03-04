@@ -1,6 +1,14 @@
-const areValuesArrays = (v) => {
-    
+const areValuesArrays = (arr) => {
+    let answer = 'Yes'
+    for (let val of arr) {
+        if (!Array.isArray(val)) {
+            answer = 'No';
+        }
+    }
+    return `Are all the values within the array also arrays? ${answer}.`
 }
+
+console.log(areValuesArrays([['a'],[1],[1,2,3]]));
 
 
 
