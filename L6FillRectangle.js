@@ -1,6 +1,48 @@
-const fillRectangle = (w, h, c) => {
-    
+const rectangles = (w, h, c) => {
+    // creating an outer function called rectangles so
+    // both function are called in one go.
+    const fillRectangle = (w, h, c) => {
+        let arr = [];
+        for (let i = 1; i <= h; i++) {
+            let innerArr = [];
+            // innerArr will contain the result of the inner loop 
+            for (let j = 1; j <= w; j++) {
+                innerArr.push(c);
+                // inner loop pushes "c" to the end of innerArr
+                // once every loop.
+            }
+            arr.push(innerArr);
+            // innerArr pushed to end of arr once every loop
+        }
+        return arr;
+    };
+    const rectangleToString = (a) => {
+        console.log(fillRectangle(w,h,c));
+        // exicuting fillRectangle function within rectangleToString
+        // function to get value within this function scope.
+        let arr = a; // reassigning to function scopped "arr".
+        let str = '\n';
+        for (let innerArr of arr) {
+            let innerStr = '';
+            // innerStr will get value of inner loop results.
+            for (let char of innerArr) {
+                innerStr += char;
+                // adding each value of innerArr to innerStr.
+            }
+            str += `${innerStr}\n`;
+            // adding innerStr to str once for every loop.
+            // innerStr has all innerArr values in one string.
+        }
+        return str;
+    }
+    return rectangleToString(fillRectangle(w,h,c))
+    // calling fillRectangle within rectanleToString so
+    // output of fillRectangle can be used as argument
+    // for rectangleToString.
 }
+
+console.log(rectangles(5, 3, "🔥"));
+
 
 
 // Fill Rectangle
