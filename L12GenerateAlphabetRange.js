@@ -4,10 +4,19 @@ const alphaRange = (start, end, num) => {
     let s;
     let e;
     let n = 1;
+    // n is how many index's the loop goes up by, it will
+    // change if there is a third argument in alphaRange().
     if (end) {
         function findIndex (start,end) {
             s = alphabet.indexOf(start);
             e = alphabet.indexOf(end);
+            // giving a value to s and e of their index
+            // when findIndex is called. if s is further
+            // along in the alphabet than e then s and e
+            // will have to be assigned new index as the
+            // alphabet string will be reversing. rather
+            // than write it twice I have created this 
+            // findIndex function.
             return
         };
     } else return 'Need two or three arguments';
@@ -15,11 +24,17 @@ const alphaRange = (start, end, num) => {
     if (s > e) {
         alphabet = alphabet.reverse();
         findIndex(start,end);
+        // re-assigning s and e if s is further in alphabet
+        // than e as the alphabet string will be reversed,
+        // so their index will change.
     };
     if (num) {n = num};
     
     for (let i = s; i <= e; i += n) {
-        charArr.push(alphabet[i]);                
+        charArr.push(alphabet[i]);    
+        // starting loop at character index s and ending at
+        // index  e then pushing the value to charArr. This 
+        // will happen to every n'th index.            
     }    
     return charArr;
 };
