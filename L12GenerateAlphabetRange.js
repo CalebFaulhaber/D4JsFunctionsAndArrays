@@ -1,6 +1,28 @@
-const alphaRange = (start, end, num) {
-
-}
+const alphaRange = (start, end, num) => {
+    let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    let charArr = [];
+    let s;
+    let e;
+    let n = 1;
+    if (end) {
+        function findIndex (start,end) {
+            s = alphabet.indexOf(start);
+            e = alphabet.indexOf(end);
+            return
+        };
+    } else return 'Need two or three arguments';
+    findIndex(start,end);
+    if (s > e) {
+        alphabet = alphabet.reverse();
+        findIndex(start,end);
+    };
+    if (num) {n = num};
+    
+    for (let i = s; i <= e; i += n) {
+        charArr.push(alphabet[i]);                
+    }    
+    return charArr;
+};
 
 console.log(alphaRange('a', 'k', 3));
 
