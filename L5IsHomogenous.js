@@ -5,7 +5,7 @@ const isHomogenous = (arr) => {
         let type; 
         // this can't be assigned a value yet as typeof()
         // shows arrays as 'object', due to this there is
-        // and if statment needed after assigning 'type'.
+        // an if statment needed after assigning 'type'.
         if (Array.isArray(value)) {
             type = 'array';
             // checking if "value" is an array, if so "type"
@@ -26,6 +26,8 @@ const isHomogenous = (arr) => {
 }
 
 console.log(isHomogenous([[4], [4, {hello: 'hello'}]]))
+
+
 
 // Is Homogenous?
 
